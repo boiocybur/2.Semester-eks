@@ -1,0 +1,358 @@
+/* Hero-sektion øverst på siden (med overskrift og undertekst) */
+.pricing-hero {
+  padding: 120px 50px 60px; /* Stor top-padding for god luft fra menuen */
+  text-align: center; /* Centreret tekst */
+  color: white; /* Hvid tekstfarve */
+  background: var(--darkblue); /* Bruger sitets mørkeblå farve */
+}
+
+.pricing-hero h1 {
+  font-size: 2.7rem; /* Stor, fed overskrift */
+  margin-bottom: 16px; /* Afstand under overskriften */
+}
+
+.pricing-hero p {
+  font-size: 1.25rem; /* Lidt større undertekst */
+  max-width: 700px; /* Begrænser tekstbredden for bedre læsbarhed */
+  margin: 0 auto; /* Centrerer afsnittet */
+  color: var(--blue-light); /* Lys blå farve for undertekst */
+}
+
+/* Hovedboks som indeholder alle priskortene */
+.pricing-box {
+  max-width: var(--max-width); /* Samme maksbredde som resten af sitet */
+  margin: 20px auto; /* Centreret med lidt afstand ovenfra */
+  padding: 20px 30px 80px; /* Indre afstand – mere i bunden */
+  background: rgba(26, 35, 51, 0.95); /* Mørk gennemsigtig baggrund */
+  border-radius: 16px; /* Afrundede hjørner */
+  box-shadow: var(--shadow); /* Blød skygge som på resten af sitet */
+}
+
+/* Grid-container til de tre priskort */
+.pricing-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  /* Responisvt grid: minimum 340px pr. kort, tilpasser sig skærmstørrelse */
+  gap: 30px; /* Afstand mellem kortene */
+  margin-top: 40px; /* Afstand fra toppen af boksen */
+}
+
+/* Stil for hvert enkelt priskort */
+.pricing-card {
+  background: rgba(255, 255, 255, 0.05); /* Meget let hvid gennemsigtighed */
+  border: 1px solid rgba(200, 174, 119, 0.2); /* Svag guld kant */
+  border-radius: 12px; /* Afrundede hjørner */
+  overflow: hidden; /* Sikrer at indhold ikke stikker ud */
+  transition: var(--transition); /* Glat animation ved hover */
+  height: 100%; /* Alle kort får samme højde */
+  display: flex;
+  flex-direction: column; /* Gør det muligt at skubbe knappen ned i bunden */
+}
+
+/* Tekst under overskriften i kortene (f.eks. "Hurtigt og enkelt") */
+.pricing-card p {
+  color: var(--blue-light);
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+/* Hover-effekt på kortene */
+.pricing-card:hover {
+  transform: translateY(-10px); /* Løfter kortet lidt op */
+  border-color: var(--gold-light); /* Stærkere guld kant */
+  box-shadow: var(--shadow-hover); /* Stærkere skygge */
+}
+
+/* "MEST VALGT" kortet (Modnet) */
+.pricing-card.popular {
+  border: 3px solid var(--gold-light); /* Tykkere guld kant */
+  position: relative; /* Nødvendig for ::before badge */
+}
+
+/* "MEST VALGT" badge øverst på kortet */
+.pricing-card.popular::before {
+  content: "MEST VALGT";
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-light);
+  color: var(--navy);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 6px 26px;
+  border-radius: 50px;
+  z-index: 1;
+}
+
+/* Topdel af kortet (ikon + titel + undertitel + video-længde) */
+.card-header {
+  padding: 30px 24px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(200, 174, 119, 0.15); /* Svag adskillelseslinje */
+}
+
+.card-header h3 {
+  color: var(--gold-light); /* Guld farve på titlerne */
+  font-size: 1.8rem;
+  margin: 12px 0 6px;
+}
+
+/* Video-længde badge (f.eks. "Op til 15 sek.") */
+.video-time {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--blue-light);
+  padding: 6px 18px;
+  border-radius: 50px;
+  display: inline-block;
+  font-weight: 600;
+  margin: 12px 0;
+}
+
+/* Liste med features under header */
+.features {
+  padding: 24px;
+  flex-grow: 1; /* Fylder den tilgængelige plads */
+  color: #e2e8f0; /* Lys grå-hvid tekst */
+}
+
+.features li {
+  padding: 11px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Svag linje mellem punkter */
+}
+
+.features li:last-child {
+  border-bottom: none; /* Ingen linje under sidste punkt */
+}
+
+.features li i {
+  color: #22c55e; /* Grøn checkmark */
+  font-size: 1.3rem;
+}
+
+/* Pris-sektion i bunden af hvert kort */
+.price {
+  padding: 20px 24px 32px;
+  text-align: center;
+  margin-top: auto; /* Skubber prisen helt ned i bunden */
+}
+
+.price-amount {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.price-amount span {
+  font-size: 1rem;
+  color: #94a3b8; /* Lys grå til "inkl. moms" */
+}
+
+/* Fælles stil for alle "Vælg ..." knapper */
+.btn-choose {
+  display: block;
+  width: 85%;
+  margin: 20px auto 0;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px; /* Rund knap */
+  text-align: center;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* Specifikke farver til de tre knap-typer */
+.btn-basal {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-modnet {
+  background: var(--gold-light);
+  color: var(--navy);
+}
+
+.btn-avanceret {
+  background: transparent;
+  color: var(--gold-light);
+  border: 2px solid var(--gold-light);
+}
+
+/* Hover-effekter på knapperne */
+.btn-choose:hover {
+  transform: translateY(-3px); /* Løfter knappen let */
+}
+
+.btn-basal:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--gray);
+}
+
+.btn-modnet:hover {
+  background: var(--gold-dark);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-avanceret:hover {
+  background: var(--gold-light);
+  color: var(--navy);
+  border-color: var(--gold-light);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Ekstra knap-stil (hvis du senere tilføjer "Mesterlig" niveau) */
+.btn-mesterlig {
+  background: transparent;
+  color: var(--blue-light);
+  border: 2px solid var(--blue-light);
+}
+
+.btn-mesterlig:hover {
+  background: var(--blue-light);
+  color: var(--navy);
+  border-color: var(--blue-light);
+  box-shadow: var(--shadow-hover);
+}
+
+/* CTA-knap inde i video-sektionen */
+.pricing-info a {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.875rem 2rem;
+  background: var(--gold-dark);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.pricing-info a:hover {
+  background: var(--gold-light);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.pricing-info p {
+  color: var(--blue-light);
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* =============================================
+   VALG.HTML STYLES
+   ============================================= */
+
+.choice-hero {
+  padding: 120px 20px 80px;
+  text-align: center;
+  color: white;
+  background: var(--darkblue);
+}
+
+.choice-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+}
+
+.choice-hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--blue-light);
+}
+
+.choice-container {
+  max-width: var(--max-width);
+  margin: -40px auto 100px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 40px;
+}
+
+.choice-card {
+  background: rgba(26, 35, 51, 0.95);
+  border: 1px solid rgba(200, 174, 119, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.choice-card:hover {
+  transform: translateY(-12px);
+  border-color: var(--gold-light);
+  box-shadow: var(--shadow-hover);
+}
+
+.choice-header {
+  padding: 40px 30px 24px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.choice-header h2 {
+  color: var(--gold-light);
+  font-size: 2.1rem;
+  margin-bottom: 12px;
+}
+
+.choice-subtitle {
+  color: var(--blue-light);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.choice-emoji {
+  font-size: 4.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.choice-content {
+  padding: 10px 30px 40px;
+  flex-grow: 1;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+
+.choice-content p {
+  margin-bottom: 16px;
+}
+
+.choice-content strong {
+  display: block;
+  margin-top: 20px;
+  color: var(--gold-light);
+}
+
+.btn-choose-big {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 0;
+  padding: 15px 40px;
+  background: var(--gold-light);
+  color: var(--navy);
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  width: 85%;
+  transition: var(--transition);
+}
+
+.btn-choose-big:hover {
+  transform: translateY(-3px);
+}

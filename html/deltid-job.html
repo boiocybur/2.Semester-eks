@@ -1,0 +1,218 @@
+<!doctype html>
+<!-- Fortæller browseren, at dette er et HTML5-dokument -->
+
+<html lang="en">
+  <!-- Starter HTML-dokumentet og angiver standardsproget som engelsk (kan ændres til "da" hvis ønsket) -->
+
+  <head>
+    <!-- HEAD-sektionen indeholder metadata og ressourcer, der ikke vises direkte på siden -->
+
+    <meta charset="UTF-8" />
+    <!-- Angiver tegnsæt (UTF-8) så danske bogstaver (æøå) vises korrekt -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Gør siden mobilvenlig (responsive) -->
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Henter Font Awesome ikoner (bruges til checkmarks, sociale medier osv.) -->
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Henter den generelle stylesheet -->
+
+    <link rel="stylesheet" href="../css/pris-style.css" />
+    <!-- Henter specifik stylesheet til prissiden -->
+
+    <title>Priser – Deltidsjob Video</title>
+    <!-- Siderens titel, vises i browser-fanen -->
+  </head>
+
+  <body>
+    <!-- Starter kropppen af hjemmesiden (alt synligt indhold) -->
+
+    <div id="logo">
+      <!-- Logo-container -->
+      <img
+        src="../image/Eksamens_projekt__2_-removebg-preview.png"
+        alt="Logo"
+        onclick="window.location.href = 'index.html'"
+      />
+      <!-- Logo-billede. Klik på det sender brugeren til forsiden (index.html) -->
+    </div>
+
+    <div id="burger-menu">
+      <span></span>
+    </div>
+
+    <div id="menu">
+      <ul>
+        <li><a href="book.html">Book din video</a></li>
+        <li class="has-children">
+          <a href="valg.html">Vælg din video</a>
+          <ul class="sub-menu">
+            <li><a href="DIY.html">Lav din egen video</a></li>
+            <li><a href="fuldtid-job.html">Professionelt set up</a></li>
+          </ul>
+        </li>
+        <li><a href="priser.html">Priser</a></li>
+        <li>
+          <a href="how-work.html"
+            >Sådan foregår det
+            <i class="fa-solid fa-video fa-flip-horizontal"></i
+          ></a>
+        </li>
+        <li><a href="cases.html">Cases</a></li>
+        <li><a href="about.html">Mød os</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <!-- Hovedindholdet på siden (bedre for SEO og semantik) -->
+
+      <!-- Hero -->
+      <section class="pricing-hero">
+        <!-- Hero-sektion øverst på siden (stor overskrift + intro) -->
+        <h1>Deltidsjob – vis hvem du er på kort tid</h1>
+        <!-- Hovedoverskrift -->
+        <p>
+          Korte, effektive ansøgningsvideoer der skiller dig ud – til én fast
+          pris.
+        </p>
+        <!-- Underoverskrift / lead-tekst -->
+      </section>
+
+      <!-- Pricing i en boks -->
+      <div class="pricing-box">
+        <!-- Ydre boks rundt om alle priskortene -->
+        <div class="pricing-container">
+          <!-- Indre container til de tre kort (flex/grid) -->
+
+          <!-- BASAL -->
+          <div class="pricing-card">
+            <!-- Priskort 1: Basal-pakke -->
+            <div class="card-header">
+              <!-- Toppen af kortet med ikon, titel og beskrivelse -->
+              <span class="emoji-circle">🌱</span>
+              <h3>BASAL</h3>
+              <p>Hurtigt og enkelt</p>
+              <div class="video-time">Video: Op til 15 sek.</div>
+            </div>
+
+            <ul class="features">
+              <!-- Liste med funktioner i pakken -->
+              <li>
+                <span class="emoji-outline">🚀&#xFE0E;</span> Hurtig optagelse
+                (template setup)
+              </li>
+              <li>
+                <span class="emoji-outline">📜&#xFE0E;</span> AI-genereret manus
+                (1 version)
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Automatisk klip + undertekster
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Simpel tekst (navn + jobtype)
+              </li>
+              <li><i class="fa-solid fa-check"></i> 1 korrektur</li>
+            </ul>
+
+            <div class="price">
+              <!-- Pris og knap nederst -->
+              <div class="price-amount">499 kr.<span> inkl. moms</span></div>
+              <a href="#" class="btn-choose btn-basal">Vælg Basal</a>
+            </div>
+          </div>
+
+          <!-- MODNET -->
+          <div class="pricing-card popular">
+            <!-- Priskort 2: Modnet-pakke (med .popular-klasse til highlighting) -->
+            <div class="card-header">
+              <span style="font-size: 2.4rem">⭐</span>
+              <h3>MODNET</h3>
+              <p>Stå stærkere</p>
+              <div class="video-time">Video: Op til 25 sek.</div>
+            </div>
+
+            <ul class="features">
+              <li>
+                <i class="fa-solid fa-check"></i> AI manus + 2 variationer
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Bedre klip + visuel struktur
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Undertekster + let branding
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Kort pitch (hvem er jeg +
+                hvorfor mig)
+              </li>
+              <li><i class="fa-solid fa-check"></i> 1–2 korrekturer</li>
+            </ul>
+
+            <div class="price">
+              <div class="price-amount">899 kr.<span> inkl. moms</span></div>
+              <a href="#" class="btn-choose btn-modnet">Vælg Modnet</a>
+            </div>
+          </div>
+
+          <!-- AVANCERET -->
+          <div class="pricing-card">
+            <!-- Priskort 3: Avanceret-pakke -->
+            <div class="card-header">
+              <span style="font-size: 2.4rem">🚀</span>
+              <h3>AVANCERET</h3>
+              <p>Tag det til næste niveau</p>
+              <div class="video-time">Video: Op til 40 sek.</div>
+            </div>
+
+            <ul class="features">
+              <li>
+                <i class="fa-solid fa-check"></i> AI + manuel
+                manuskriptoptimering
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> B-roll (arbejdssituationer)
+              </li>
+              <li><i class="fa-solid fa-check"></i> Dynamisk klip + flow</li>
+              <li><i class="fa-solid fa-check"></i> Branding elementer</li>
+              <li><i class="fa-solid fa-check"></i> Script sparring</li>
+            </ul>
+
+            <div class="price">
+              <div class="price-amount">1.499 kr.<span> inkl. moms</span></div>
+              <a href="#" class="btn-choose btn-avanceret">Vælg Avanceret</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <!-- Footer-sektion -->
+      <div class="footer-left">
+        <!-- Venstre del af footeren -->
+        <p>B2B</p>
+        <p><a href="kontakt.html">Kontakt support</a></p>
+      </div>
+
+      <div class="footer-right">
+        <!-- Højre del med sociale medier -->
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <!-- Henter JavaScript-filen (burger-menu, eventuelle animationer osv.) -->
+  </body>
+</html>

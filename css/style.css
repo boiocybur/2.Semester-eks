@@ -1,0 +1,337 @@
+/* =============================================
+   1. UNIVERSAL RESET & BOX-SIZING
+   ============================================= */
+
+/* Nulstiller alle standardmargener og padding fra browseren */
+*,
+*::before,
+*::after {
+  margin: 0; /* Fjerner standard ydre afstand */
+  padding: 0; /* Fjerner standard indre afstand */
+  box-sizing: border-box; /* Gør det nemmere at regne med bredde/højde (padding + border inkluderes) */
+}
+
+/* =============================================
+   2. CSS VARIABLER (Custom Properties)
+   ============================================= */
+/* Her defineres farver og værdier der bruges overalt på sitet */
+:root {
+  --darkblue: #1e3c72; /* Primær mørkeblå baggrundsfarve */
+  --primary-color: #1e3c72; /* Samme som darkblue (til fremtidig brug) */
+  --gold-dark: #73581e; /* Mørk guld farve (til knapper osv.) */
+  --navy: #1a2333; /* Mørkere blå/navy til footer og overlay */
+  --gold-light: #c8ae77; /* Lys guld accentfarve (vigtig branding farve) */
+  --blue-light: #b8ccf2; /* Lys blå til tekst og ikoner */
+  --white: #ffffff; /* Hvid farve */
+  --grey: #6c757d; /* Grå tekstfarve */
+  --max-width: 1200px; /* Maksimal bredde på indhold (centreret) */
+  --font-stack:
+    "Public Sans", system-ui, Arial, Helvetica, sans-serif; /* Primær font */
+  --transition: 0.3s ease; /* Standard overgangseffekt (hover osv.) */
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Blød skygge */
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15); /* Stærkere skygge ved hover */
+}
+
+/* =============================================
+   3. HTML & BODY STYLING
+   ============================================= */
+
+html {
+  scroll-behavior: smooth; /* Glat scrolling ved ankerlinks */
+  height: 100%; /* Sikrer at body kan fylde hele skærmen */
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Gør det muligt at skubbe footer ned i bunden */
+  min-height: 100vh; /* Minimum højde = hele viewporten */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Undgår vandret scroll */
+  font-family: var(--font-stack); /* Bruger den definerede font */
+  background: var(--darkblue); /* Mørkeblå baggrund på hele siden */
+}
+
+/* =============================================
+   4. BILLEDER
+   ============================================= */
+img {
+  max-width: 250px; /* Begrænser logo og billeder */
+  height: auto; /* Bevarer proportioner */
+  display: block; /* Fjerner uønsket whitespace under billeder */
+  transition: var(--transition); /* Glat overgang ved hover */
+}
+
+/* =============================================
+   5. LOGO
+   ============================================= */
+#logo {
+  position: absolute; /* Placeres præcist på siden */
+  top: 20px;
+  left: 20px;
+  z-index: 15; /* Over video, men under menu */
+}
+
+#logo img {
+  height: 140px; /* Fast højde på logo */
+  width: 180px; /* Fast bredde */
+}
+
+/* =============================================
+   6. BURGER MENU IKON
+   ============================================= */
+#burger-menu {
+  cursor: pointer; /* Vis hånd-ikon ved musen */
+  height: 37px;
+  width: 27px;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  overflow: visible;
+  z-index: 9999; /* Altid øverst */
+}
+
+/* De tre streger i burger-menuen */
+#burger-menu span,
+#burger-menu span:before,
+#burger-menu span:after {
+  background: var(--blue-light); /* Lys blå farve på stregerne */
+  display: block;
+  height: 2px;
+  opacity: 1;
+  position: absolute;
+  transition: 0.3s ease-in-out; /* Glat animation */
+}
+
+/* Positionering af de tre streger */
+#burger-menu span:before {
+  top: -10px;
+  width: 27px;
+}
+#burger-menu span {
+  top: 13px;
+  width: 27px;
+}
+#burger-menu span:after {
+  top: 10px;
+  width: 27px;
+}
+
+/* Animation når menuen er åben (lukke-ikon) */
+#burger-menu.close span:before {
+  top: 0;
+  transform: rotate(90deg);
+}
+#burger-menu.close span {
+  transform: rotate(-45deg);
+}
+#burger-menu.close span:after {
+  opacity: 0;
+  width: 0;
+}
+
+/* =============================================
+   7. FULLSCREEN MENU (overlay)
+   ============================================= */
+#menu {
+  z-index: 20; /* Over alt andet */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  text-align: center;
+  padding-top: 20px;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none; /* Klik ikke muligt når lukket */
+}
+
+#menu.overlay {
+  visibility: visible;
+  opacity: 1;
+  height: 100%;
+  padding-top: 100px;
+  background: rgba(26, 35, 51, 0.92); /* Mørk gennemsigtig overlay */
+  pointer-events: all; /* Klik muligt når åben */
+}
+
+#menu ul {
+  padding: 0;
+}
+#menu li {
+  list-style: none;
+}
+
+#menu a {
+  color: var(--white);
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  display: block;
+}
+
+#menu a:hover {
+  color: var(--gold-light); /* Guld farve ved hover */
+}
+
+/* Undermenu (Deltids job, Fuldtids job osv.) */
+#menu .sub-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  padding: 0;
+}
+
+/* Vis undermenu ved hover */
+#menu li.has-children:hover .sub-menu {
+  max-height: 300px;
+  opacity: 1;
+  margin-bottom: 20px;
+}
+
+#menu .sub-menu a {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--blue-light);
+}
+
+#menu .sub-menu a:hover {
+  color: var(--gold-light);
+}
+
+/* Pil efter "Vælg din video" */
+#menu li.has-children > a::after {
+  content: " ▼";
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+/* =============================================
+   8. MAIN INDHOLD
+   ============================================= */
+main {
+  flex: 1; /* Fylder resten af højden */
+  position: relative;
+  z-index: 1;
+}
+
+/* =============================================
+   9. VIDEO BAGGRUND
+   ============================================= */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Indhold placeres til højre */
+  overflow: hidden;
+  z-index: 0; /* Bag alt andet */
+  padding-right: 4rem;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover; /* Dækker hele området uden at forvrænge */
+  opacity: 0.3; /* Halvgennemsigtig video */
+}
+
+.video-container .content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  padding: 3rem;
+  text-align: center;
+  background: rgba(30, 60, 114, 0.65);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+/* CTA-knap inde i video-sektionen */
+.video-container a {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.875rem 2rem;
+  background: var(--gold-dark);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.video-container a:hover {
+  background: var(--gold-light);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* =============================================
+   10. FOOTER
+   ============================================= */
+.footer {
+  position: relative;
+  z-index: 10;
+  background-color: var(--navy);
+  padding: 20px 1.5rem;
+  min-height: 25vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer-left a {
+  color: var(--blue-light);
+  text-decoration: none;
+}
+
+.footer-left a:hover {
+  color: var(--gold-light);
+}
+
+.footer-left p {
+  color: var(--white);
+}
+
+.social-icons a {
+  color: var(--blue-light);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color var(--transition);
+}
+
+.social-icons a:hover {
+  color: var(--gold-light);
+}
+
+.emoji-circle {
+  font-size: 3rem;
+  width: 70px;
+  height: 70px;
+  line-height: 60px;
+  border-radius: 50%;
+  background-color: var(--white);
+  display: inline-block;
+}
+
+.emoji-outline {
+  font-size: 1.5rem;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: inline-block;
+}
