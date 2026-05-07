@@ -69,12 +69,12 @@ img {
   position: absolute; /* Placeres præcist på siden */
   top: 20px;
   left: 20px;
-  z-index: 15; /* Over video, men under menu */
+  z-index: 25; /* Over video, men under menu */
 }
 
 #logo img {
-  height: 140px; /* Fast højde på logo */
-  width: 180px; /* Fast bredde */
+  height: 180px; /* Fast højde på logo */
+  width: 220px; /* Fast bredde */
 }
 
 /* =============================================
