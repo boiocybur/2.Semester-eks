@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kontakt HR-Video for et uforpligtende samarbejde om videobaserede rekrutteringsløsninger."
+    />
+
+    <title>Kontakt os | HR-Video</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/kontakt.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Logo + Menu -->
+    <div id="logo">
+      <img
+        src="../image/Eksamens_projekt__2_-removebg-preview.png"
+        alt="HR-Video Logo"
+        onclick="window.location.href = 'index.html'"
+      />
+    </div>
+
+    <div id="burger-menu">
+      <span></span>
+    </div>
+
+    <div id="menu">
+      <ul>
+        <li><a href="book.html">Book din video</a></li>
+        <li class="has-children">
+          <a href="valg.html">Vælg din video</a>
+          <ul class="sub-menu">
+            <li><a href="diy.html">Lav din egen video</a></li>
+            <li><a href="pro-setup.html">Professionelt set up</a></li>
+          </ul>
+        </li>
+        <li><a href="priser.html">Priser</a></li>
+        <li>
+          <a href="how-work.html"
+            >Sådan foregår det
+            <i class="fa-solid fa-video fa-flip-horizontal"></i
+          ></a>
+        </li>
+        <li><a href="cases.html">Cases</a></li>
+        <li><a href="about-us.html">Mød os</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <!-- Hero -->
+      <section class="contact-hero">
+        <div class="hero-content">
+          <h1>Kontakt os</h1>
+          <p class="lead">
+            Lad os sammen skabe bedre rekrutteringsoplevelser med video.
+          </p>
+        </div>
+      </section>
+
+      <div class="contact-container">
+        <!-- Venstre side -->
+        <div class="contact-left">
+          <div class="b2b-section">
+            <h2>B2B – Lad os skabe værdi sammen</h2>
+            <p>
+              Vi samarbejder med virksomheder og HR-afdelinger, der ønsker en
+              mere moderne og menneskelig rekrutteringsproces.
+            </p>
+            <p>
+              <strong>Udfyld formularen</strong> – vi tager en uforpligtende
+              dialog om jeres behov.
+            </p>
+          </div>
+
+          <div class="support-section">
+            <h2>Kontakt support</h2>
+            <p>
+              Hos HR-VIDEO hjælper vi dig med at skabe en mere personlig,
+              professionel og målrettet præsentation af dig selv.
+            </p>
+            <p>
+              En god ansøgning handler ikke kun om ord på papir – den handler
+              også om at vise personen bag. Med den rette video kan du skabe et
+              stærkere førstehåndsindtryk og give din ansøgning mere
+              gennemslagskraft.
+            </p>
+            <p class="call-to-action">
+              <strong>Tag kontakt til os i dag</strong>, og tag første skridt
+              mod en ansøgning, der bliver husket.
+            </p>
+          </div>
+        </div>
+
+        <!-- Separator -->
+        <div class="contact-divider"></div>
+
+        <!-- Højre side - Formular -->
+        <div class="contact-right">
+          <form id="contact-form" class="contact-form" novalidate>
+            <input type="hidden" name="time" id="hidden-time" />
+
+            <div class="form-group">
+              <label for="name">Navn <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <i class="fas fa-user"></i>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <i class="fas fa-envelope"></i>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefon (valgfrit)</label>
+              <div class="input-wrapper">
+                <i class="fas fa-phone"></i>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="+45 12 34 56 78"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inquiry-type"
+                >Hvad handler din henvendelse om?
+                <span class="required">*</span></label
+              >
+              <select id="inquiry-type" name="inquiry_type" required>
+                <option value="">Vælg emne...</option>
+                <option value="Samarbejde">Samarbejde / B2B</option>
+                <option value="Privat video">
+                  Privat video (jobansøgning)
+                </option>
+                <option value="Demo">Book en demo</option>
+                <option value="Andet">Andet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="title">Emne <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <i class="fas fa-heading"></i>
+                <input type="text" id="title" name="title" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message"
+                >Besked <span class="required">*</span></label
+              >
+              <div class="input-wrapper textarea-wrapper">
+                <textarea
+                  id="message"
+                  name="message"
+                  maxlength="800"
+                  rows="8"
+                  required
+                ></textarea>
+              </div>
+              <div class="char-counter"><span id="char-count">0</span>/800</div>
+            </div>
+
+            <div
+              id="form-feedback"
+              class="form-feedback"
+              aria-live="polite"
+            ></div>
+
+            <button type="submit" class="submit-btn" id="submit-btn">
+              <i class="fas fa-paper-plane"></i> Send besked
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left">
+        <p>B2B</p>
+        <p><a href="kontakt.html">Kontakt support</a></p>
+      </div>
+
+      <div class="footer-right">
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+      emailjs.init({ publicKey: "jCecy5j4XpADcjURz" });
+
+      const form = document.getElementById("contact-form");
+      const feedback = document.getElementById("form-feedback");
+      const submitBtn = document.getElementById("submit-btn");
+      const charCount = document.getElementById("char-count");
+      const messageField = document.getElementById("message");
+
+      messageField.addEventListener("input", () => {
+        charCount.textContent = messageField.value.length;
+      });
+
+      document.getElementById("hidden-time").value = new Date().toISOString();
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+          feedback.textContent =
+            "Udfyld venligst alle påkrævede felter korrekt.";
+          feedback.className = "form-feedback error";
+          return;
+        }
+
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = "Sender...";
+        submitBtn.disabled = true;
+
+        emailjs
+          .sendForm("service_26eqpln", "template_umu5a4s", this)
+          .then(() => {
+            feedback.textContent =
+              "✅ Tak! Din besked er sendt. Vi svarer hurtigst muligt.";
+            feedback.className = "form-feedback success";
+            form.reset();
+            charCount.textContent = "0";
+          })
+          .catch((err) => {
+            console.error(err);
+            feedback.textContent =
+              "Der opstod en fejl. Prøv igen eller skriv direkte til os på mail.";
+            feedback.className = "form-feedback error";
+          })
+          .finally(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          });
+      });
+    </script>
+  </body>
+</html>

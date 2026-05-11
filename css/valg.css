@@ -3,23 +3,22 @@
    ============================================= */
 
 .choice-hero {
-  background: var(--navy);
-  color: #e2e8f0;
-  text-align: center;
-  padding: 90px 20px 70px;
+  padding: 120px 50px 60px; /* Stor top-padding for god luft fra menuen */
+  text-align: center; /* Centreret tekst */
+  color: white; /* Hvid tekstfarve */
+  background: var(--darkblue); /* Bruger sitets mørkeblå farve */
 }
 
 .choice-hero h1 {
-  font-size: 2.9rem;
-  margin-bottom: 18px;
-  color: var(--white);
+  font-size: 2.7rem; /* Stor, fed overskrift */
+  margin-bottom: 16px; /* Afstand under overskriften */
 }
 
-.choice-hero .hero-subtitle {
-  font-size: 1.3rem;
-  max-width: 720px;
-  margin: 0 auto;
-  opacity: 0.9;
+.choice-hero p {
+  font-size: 1.25rem; /* Lidt større undertekst */
+  max-width: 700px; /* Begrænser tekstbredden for bedre læsbarhed */
+  margin: 0 auto; /* Centrerer afsnittet */
+  color: var(--blue-light); /* Lys blå farve for undertekst */
 }
 
 /* ====================== CARD ====================== */

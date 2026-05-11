@@ -1,0 +1,286 @@
+/* ==================== KONTAKT SIDEN ==================== */
+
+.contact-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  display: grid;
+  grid-template-columns: 1.35fr 4px 0.65fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-right: 20px;
+}
+
+/* Separator streg i midten */
+.contact-divider {
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--gold-light),
+    transparent
+  );
+  align-self: stretch;
+  margin: 60px 0;
+}
+
+/* Højre side - Formular */
+.contact-right {
+  padding-left: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Formular - selve boksen (større bredde beholdes) */
+.contact-form {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 48px 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(200, 174, 119, 0.15);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 520px; /* Lidt bredere formular, men felterne smallere */
+  margin-left: auto;
+}
+
+/* ==================== TEKSTBOKSE ==================== */
+
+.input-wrapper input,
+.input-wrapper textarea,
+select {
+  width: 100%;
+  max-width: 420px; /* Mindre bredde på tekstfelterne */
+  padding: 14px 20px 14px 48px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(200, 174, 119, 0.25);
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.textarea-wrapper textarea {
+  max-width: 420px; /* Mindre bredde på besked-feltet */
+  min-height: 160px; /* Længere (højere) textarea */
+  resize: vertical;
+  padding-left: 20px;
+}
+
+/* Select boks */
+select {
+  max-width: 420px;
+  padding-left: 18px;
+}
+
+/* Resten af styling (uændret) */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-group {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--gold-light);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold-light);
+  font-size: 1rem;
+  z-index: 2;
+}
+
+.input-wrapper input::placeholder,
+.input-wrapper textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--gold-light);
+  box-shadow: 0 0 0 3px rgba(200, 174, 119, 0.1);
+}
+
+.char-counter {
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--blue-light);
+}
+
+.form-group label .required {
+  color: #e85d5d;
+}
+
+.form-feedback {
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: var(--transition);
+}
+
+.form-feedback.success {
+  background: rgba(40, 167, 69, 0.12);
+  color: #d4f3d1;
+  border: 1px solid rgba(40, 167, 69, 0.25);
+}
+
+.form-feedback.error {
+  background: rgba(220, 53, 69, 0.12);
+  color: #ffd2d2;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.submit-btn {
+  width: 100%;
+  max-width: 420px; /* Submit knap følger tekstboksens bredde */
+  padding: 16px 20px;
+  background: var(--gold-dark);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  margin-left: auto;
+}
+
+.submit-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* B2B og Support sektioner (uændret) */
+.b2b-section,
+.support-section {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(200, 174, 119, 0.1);
+}
+
+.b2b-section h2,
+.support-section h2 {
+  color: var(--gold-light);
+  font-size: 2rem;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+.b2b-section p,
+.support-section p {
+  color: var(--blue-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.support-section .call-to-action {
+  font-size: 1.05rem;
+  color: var(--white);
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(200, 174, 119, 0.2);
+}
+
+/* ==================== HERO CONTENT ==================== */
+.hero-content {
+  padding: 120px 50px 60px; /* Stor top-padding for god luft fra menuen */
+  text-align: center; /* Centreret tekst */
+  color: white; /* Hvid tekstfarve */
+  background: var(--darkblue); /* Bruger sitets mørkeblå farve */
+}
+
+.hero-content h1 {
+  font-size: 2.7rem; /* Stor, fed overskrift */
+  margin-bottom: 16px; /* Afstand under overskriften */
+}
+
+.hero-content p {
+  font-size: 1.25rem; /* Lidt større undertekst */
+  max-width: 700px; /* Begrænser tekstbredden for bedre læsbarhed */
+  margin: 0 auto; /* Centrerer afsnittet */
+  color: var(--blue-light); /* Lys blå farve for undertekst */
+}
+
+/* ==================== RESPONSIV ==================== */
+
+@media (max-width: 1024px) {
+  .contact-container {
+    grid-template-columns: 1.2fr 4px 0.8fr;
+    gap: 60px;
+  }
+  .contact-form {
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  .contact-divider {
+    display: none;
+  }
+
+  .contact-right {
+    justify-content: center;
+  }
+
+  .input-wrapper input,
+  .input-wrapper textarea,
+  select,
+  .submit-btn {
+    max-width: 100%;
+  }
+
+  .b2b-section,
+  .support-section {
+    padding: 30px;
+  }
+}

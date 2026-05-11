@@ -1,0 +1,156 @@
+.how-work-hero {
+  padding: 120px 50px 60px; /* Stor top-padding for god luft fra menuen */
+  text-align: center; /* Centreret tekst */
+  color: white; /* Hvid tekstfarve */
+  background: var(--darkblue); /* Bruger sitets mørkeblå farve */
+}
+
+.hero-content h1 {
+  font-size: 2.7rem; /* Stor, fed overskrift */
+  margin-bottom: 16px; /* Afstand under overskriften */
+}
+
+.hero-content p {
+  font-size: 1.25rem; /* Lidt større undertekst */
+  max-width: 700px; /* Begrænser tekstbredden for bedre læsbarhed */
+  margin: 0 auto; /* Centrerer afsnittet */
+  color: var(--blue-light); /* Lys blå farve for undertekst */
+}
+
+.lead {
+  font-size: 1.4rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Process steps */
+.process-section {
+  padding: 100px 20px;
+  background: var(--darkblue);
+}
+
+.section-title {
+  text-align: center;
+  color: var(--gold-light);
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.step-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gold-light);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.step-card:hover::before {
+  transform: scaleX(1);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: var(--gold-dark);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 auto 20px;
+}
+
+.step-icon {
+  font-size: 3.5rem;
+  margin: 15px 0;
+}
+
+/* Trust section */
+.trust-section {
+  padding: 100px 20px;
+  background: var(--navy);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: center;
+}
+
+.trust-text ul {
+  list-style: none;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.trust-text li {
+  margin-bottom: 15px;
+}
+
+.process-image {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* CTA */
+.cta-section {
+  padding: 120px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--darkblue), #0f253f);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 18px 50px;
+  background: var(--gold-dark);
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.cta-button:hover {
+  background: var(--gold-light);
+  transform: scale(1.05);
+}
+
+/* Responsiv */
+@media (max-width: 768px) {
+  .trust-grid {
+    gap: 40px;
+  }
+  .process-image {
+    max-height: 380px;
+    object-fit: cover;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+}
