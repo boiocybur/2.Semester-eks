@@ -46,19 +46,19 @@
 
 .step-card {
   position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(200, 174, 119, 0.2);
+  border-radius: 12px;
+  padding: 40px 24px;
+  text-align: center;
   overflow: hidden;
+  transition: var(--transition);
 }
 
-.step-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--gold-light);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
+.step-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--gold-light);
+  box-shadow: var(--shadow-hover);
 }
 
 .step-card:hover::before {
@@ -87,7 +87,6 @@
 /* Trust section */
 .trust-section {
   padding: 100px 20px;
-  background: var(--navy);
 }
 
 .trust-grid {
@@ -108,6 +107,12 @@
 .trust-text li {
   margin-bottom: 15px;
 }
+.trust-text h2 {
+  color: var(--gold-light);
+}
+.trust-text li {
+  color: var(--blue-light);
+}
 
 .process-image {
   width: 100%;
@@ -119,7 +124,12 @@
 .cta-section {
   padding: 120px 20px;
   text-align: center;
-  background: linear-gradient(135deg, var(--darkblue), #0f253f);
+  background: linear-gradient(135deg);
+}
+.cta-section h2 {
+  color: var(--white);
+  font-size: 2.5rem;
+  margin-bottom: 40px;
 }
 
 .cta-button {
@@ -140,10 +150,62 @@
   transform: scale(1.05);
 }
 
+.video-overlay {
+  position: relative; /* VIGTIGT: Dette holder alt på plads */
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Eller en fast højde, så containeren ikke bliver 0px høj */
+  overflow: hidden;
+  border-radius: 12px; /* Valgfrit: hvis du vil have runde hjørner */
+}
+
+/* Lav et nyt lag til selve den mørke skygge */
+.video-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25); /* Din mørke toning */
+  z-index: 1;
+  pointer-events: none; /* Gør at man kan klikke "igennem" skyggen */
+}
+
+.process-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-btn {
+  position: absolute; /* Knappen skal svæve ovenpå */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrerer den præcis i midten */
+  z-index: 2; /* Sørg for at den ligger over skyggen (z-index 1) */
+
+  /* Dine eksisterende styles */
+  width: 80px;
+  height: 80px;
+  background: rgba(200, 174, 119, 0.95);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 /* Responsiv */
 @media (max-width: 768px) {
   .trust-grid {
     gap: 40px;
+    grid-template-columns: 1fr;
+  }
+  .trust-text h2 {
+    font-size: 2.3rem;
   }
   .process-image {
     max-height: 380px;

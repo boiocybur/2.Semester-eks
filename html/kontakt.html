@@ -244,6 +244,7 @@
       document.getElementById("hidden-time").value = new Date().toISOString();
 
       form.addEventListener("submit", function (e) {
+        document.getElementById("hidden-time").value = new Date().toISOString();
         e.preventDefault();
 
         if (!form.checkValidity()) {

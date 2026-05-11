@@ -37,3 +37,28 @@ overlay.addEventListener("click", function (event) {
     toggleMenu();
   }
 });
+
+// =============================================
+//  VIDEO PLAY BUTTON - how-work.html
+// =============================================
+var playBtn = document.querySelector(".play-btn");
+var processVideo = document.querySelector(".process-video");
+
+if (playBtn && processVideo) {
+  playBtn.addEventListener("click", function () {
+    if (processVideo.paused) {
+      processVideo.play();
+      this.setAttribute("aria-label", "Pause video");
+      this.innerHTML = '<i class="fa-solid fa-pause"></i>';
+    } else {
+      processVideo.pause();
+      this.setAttribute("aria-label", "Afspil video");
+      this.innerHTML = '<i class="fa-solid fa-play"></i>';
+    }
+  });
+
+  processVideo.addEventListener("ended", function () {
+    playBtn.setAttribute("aria-label", "Afspil video");
+    playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+  });
+}
