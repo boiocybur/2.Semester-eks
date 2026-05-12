@@ -28,13 +28,17 @@
   box-shadow: var(--shadow); /* Blød skygge som på resten af sitet */
 }
 
-/* Grid-container til de tre priskort */
+/* Grid-container til  priskort */
 .pricing-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  /* Responisvt grid: minimum 340px pr. kort, tilpasser sig skærmstørrelse */
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px; /* Afstand mellem kortene */
   margin-top: 40px; /* Afstand fra toppen af boksen */
+}
+
+/* For deltidsjob side, brug 3 kolonner */
+.deltid .pricing-container {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* Stil for hvert enkelt priskort */

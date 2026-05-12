@@ -16,14 +16,12 @@
    ============================================= */
 /* Her defineres farver og værdier der bruges overalt på sitet */
 :root {
-  --darkblue: #1e3c72; /* Primær mørkeblå baggrundsfarve */
-  --primary-color: #1e3c72; /* Samme som darkblue (til fremtidig brug) */
+  --darkblue: #000; /* Primær baggrundsfarve */
   --gold-dark: #73581e; /* Mørk guld farve (til knapper osv.) */
-  --navy: #1a2333; /* Mørkere blå/navy til footer og overlay */
-  --gold-light: #c8ae77; /* Lys guld accentfarve (vigtig branding farve) */
+  --navy: #c0bbbe; /* Mørkere blå/navy til footer og overlay */
+  --gold-light: #c8ae77; /* Lys guld accentfarve (vigtig branding farve og overlay) */
   --blue-light: #b8ccf2; /* Lys blå til tekst og ikoner */
   --white: #ffffff; /* Hvid farve */
-  --grey: #6c757d; /* Grå tekstfarve */
   --max-width: 1200px; /* Maksimal bredde på indhold (centreret) */
   --font-stack:
     "Public Sans", system-ui, Arial, Helvetica, sans-serif; /* Primær font */
@@ -95,7 +93,7 @@ img {
 #burger-menu span,
 #burger-menu span:before,
 #burger-menu span:after {
-  background: var(--blue-light); /* Lys blå farve på stregerne */
+  background: var(--navy); /* Lys blå farve på stregerne */
   display: block;
   height: 2px;
   opacity: 1;
@@ -293,7 +291,7 @@ main {
 }
 
 .footer-left a {
-  color: var(--blue-light);
+  color: var(--white);
   text-decoration: none;
 }
 
