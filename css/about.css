@@ -95,6 +95,19 @@
 }
 
 /* Responsiv */
+@media (max-width: 1024px) {
+  .about-hero {
+    padding: 140px 20px 80px;
+  }
+
+  .about-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .team-card img {
+    height: 240px;
+  }
+}
 @media (max-width: 768px) {
   .about-hero {
     padding: 140px 20px 80px;

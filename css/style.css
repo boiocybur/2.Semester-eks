@@ -1,4 +1,48 @@
 /* =============================================
+   FONTE — @font-face
+   Indlæser fonte fra den lokale fonts/ mappe
+   ============================================= */
+
+/* Acumin Pro Wide Ultra Black */
+@font-face {
+  font-family: "Acumin Pro Wide";
+  src: url("../fonts/acumin-pro-wide-ultra-black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Myriad Pro — Regular */
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("../fonts/MYRIADPRO-REGULAR.OTF") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Myriad Pro — Bold */
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("../fonts/MYRIADPRO-BOLD.OTF") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Myriad Pro — Semibold */
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("../fonts/MYRIADPRO-SEMIBOLD.OTF") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Myriad Pro — Light */
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("../fonts/MyriadPro-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+} /* 
+=============================================
    1. UNIVERSAL RESET & BOX-SIZING
    ============================================= */
 
@@ -23,8 +67,7 @@
   --blue-light: #b8ccf2; /* Lys blå til tekst og ikoner */
   --white: #ffffff; /* Hvid farve */
   --max-width: 1200px; /* Maksimal bredde på indhold (centreret) */
-  --font-stack:
-    "Public Sans", system-ui, Arial, Helvetica, sans-serif; /* Primær font */
+  --font-stack: "Myriad Pro", Arial, sans-serif; /* Primær font */
   --transition: 0.3s ease; /* Standard overgangseffekt (hover osv.) */
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Blød skygge */
   --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15); /* Stærkere skygge ved hover */
@@ -64,17 +107,33 @@ img {
    5. LOGO
    ============================================= */
 #logo {
-  position: absolute; /* Placeres præcist på siden */
-  top: 20px;
-  left: 20px;
-  z-index: 25; /* Over video, men under menu */
+  width: auto;
+  display: block;
 }
 
 #logo img {
-  height: 180px; /* Fast højde på logo */
-  width: 220px; /* Fast bredde */
+  max-width: 100px;
+  max-height: 40px;
+  width: auto;
+  height: 80px;
 }
-
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* Altid øverst */
+  background: transparent; /* Gennemsigtig baggrund */
+  padding: 0px 1.5rem;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+h1,
+h2,
+h3 {
+  font-family: "Acumin Pro Wide", sans-serif;
+  font-weight: 900;
+}
 /* =============================================
    6. BURGER MENU IKON
    ============================================= */
@@ -82,11 +141,20 @@ img {
   cursor: pointer; /* Vis hånd-ikon ved musen */
   height: 37px;
   width: 27px;
-  position: absolute;
-  top: 70px;
-  right: 20px;
+  position: static;
   overflow: visible;
   z-index: 9999; /* Altid øverst */
+}
+
+/* Placering af de 3 streger */
+#burger-menu span:nth-child(1) {
+  top: 5px;
+}
+#burger-menu span:nth-child(2) {
+  top: 13px;
+}
+#burger-menu span:nth-child(3) {
+  top: 21px;
 }
 
 /* De tre streger i burger-menuen */
@@ -282,7 +350,8 @@ main {
 .footer {
   position: relative;
   z-index: 10;
-  background-color: var(--navy);
+  background: var(--darkblue);
+  border-top: 1px solid var(--gold-light);
   padding: 20px 1.5rem;
   min-height: 25vh;
   display: flex;
@@ -361,4 +430,16 @@ main {
 .cta-button:hover {
   background: var(--gold-light);
   transform: scale(1.05);
+}
+@media (max-width: 1024px) {
+  .video-container {
+    justify-content: center; /* Centrerer indholdet på mindre skærme */
+    padding: 0;
+  }
+}
+@media (max-width: 768px) {
+  .video-container .content {
+    padding: 2rem;
+    max-width: 90%;
+  }
 }

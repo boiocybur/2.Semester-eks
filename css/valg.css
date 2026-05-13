@@ -236,3 +236,28 @@ p {
 strong {
   color: var(--blue-light);
 }
+@media (max-width: 1024px) {
+  .choice-hero {
+    padding: 80px 20px 40px;
+  }
+  .choice-hero h1 {
+    font-size: 1.8rem;
+  }
+  .choice-hero p {
+    font-size: 1rem;
+    max-width: none;
+  }
+}
+@media (max-width: 768px) {
+  .diy-split {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .diy-left,
+  .diy-right {
+    padding: 0;
+  }
+  .diy-divider {
+    display: none;
+  }
+}

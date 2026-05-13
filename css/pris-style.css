@@ -360,3 +360,22 @@
 .btn-choose-big:hover {
   transform: translateY(-3px);
 }
+@media (max-width: 1024px) {
+  .choice-container {
+    grid-template-columns: 1fr;
+    margin: 0 auto 80px;
+  }
+  .choice-card {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+}
+@media (max-width: 768px) {
+  .choice-hero {
+    padding: 100px 20px 60px;
+  }
+  .choice-card {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+}

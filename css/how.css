@@ -168,6 +168,13 @@
   cursor: pointer;
 }
 
+.cases-hero {
+  padding: 120px 50px 60px; /* Stor top-padding for god luft fra menuen */
+  text-align: center; /* Centreret tekst */
+  color: white; /* Hvid tekstfarve */
+  background: var(--darkblue); /* Bruger sitets mørkeblå farve */
+}
+
 /* Responsiv */
 @media (max-width: 768px) {
   .trust-grid {

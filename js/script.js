@@ -1,46 +1,61 @@
 // =============================================
-//  BURGER MENU - JavaScript
-//  Håndterer åbning/lukning af mobilmenuen
+//  HEADER LOADER
+//  Venter på siden er klar, henter header.html
 // =============================================
 
-// Henter elementerne fra HTML'en via deres ID
-var burgerMenu = document.getElementById("burger-menu");
-var overlay = document.getElementById("menu");
+window.addEventListener("load", function () {
+  fetch("../html/header.html")
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (html) {
+      document.body.insertAdjacentHTML("afterbegin", html);
 
-// Funktion der toggler (slår til/fra) menuen
-function toggleMenu() {
-  // Tilføjer/fjerner klassen "close" på burger-ikonet (så det bliver til et kryds)
-  burgerMenu.classList.toggle("close");
+      // Tjekker om vi er på forsiden (index.html)
+      if (
+        window.location.href.includes("index.html") ||
+        window.location.pathname.endsWith("/")
+      ) {
+        document.querySelector("#logo img").src = "../image/HRvideologo.svg";
+      }
 
-  // Tilføjer/fjerner klassen "overlay" på menuen (åbner/lukker menuen)
-  overlay.classList.toggle("overlay");
-}
-
-// =============================================
-//  Event Listeners
-// =============================================
-
-// Når brugeren klikker på burger-menuen
-burgerMenu.addEventListener("click", function (event) {
-  // stopPropagation forhindrer, at klikket også rammer menuen nedenunder
-  event.stopPropagation();
-
-  // Kalder funktionen der åbner/lukker menuen
-  toggleMenu();
+      // Starter burger-menuen EFTER headeren er sat ind i siden
+      initBurgerMenu();
+    });
 });
 
-// Når brugeren klikker et sted på siden (på overlay/menuen)
-overlay.addEventListener("click", function (event) {
-  // Tjekker om brugeren klikkede direkte på selve overlayet (ikke på et link inde i menuen)
-  // Dette gør, at menuen lukker når man klikker udenfor indholdet
-  if (event.target === overlay) {
-    toggleMenu();
+// =============================================
+//  BURGER MENU
+//  Ligger i en funktion så den først køres
+//  når headeren er hentet og sat ind i siden
+// =============================================
+
+function initBurgerMenu() {
+  // Henter elementerne — de findes nu fordi headeren er indsat
+  var burgerMenu = document.getElementById("burger-menu");
+  var overlay = document.getElementById("menu");
+
+  function toggleMenu() {
+    burgerMenu.classList.toggle("close");
+    overlay.classList.toggle("overlay");
   }
-});
+
+  burgerMenu.addEventListener("click", function (event) {
+    event.stopPropagation();
+    toggleMenu();
+  });
+
+  overlay.addEventListener("click", function (event) {
+    if (event.target === overlay) {
+      toggleMenu();
+    }
+  });
+}
 
 // =============================================
 //  VIDEO PLAY BUTTON - how-work.html
 // =============================================
+
 var playBtn = document.querySelector(".play-btn");
 var processVideo = document.querySelector(".process-video");
 
