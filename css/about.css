@@ -121,3 +121,103 @@
     height: 240px;
   }
 }
+@media (max-width: 1024px) {
+  .about-hero {
+    padding: 110px 20px 70px;
+  }
+  .about-hero h1 {
+    font-size: 2.6rem;
+  }
+  .about-hero .lead {
+    font-size: 1.25rem;
+  }
+
+  .story-section,
+  .team-section {
+    padding: 80px 20px;
+  }
+
+  .story-section h2,
+  .team-section .section-title {
+    font-size: 2.3rem;
+  }
+
+  .team-card img {
+    height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 90px 20px 60px;
+  }
+  .about-hero h1 {
+    font-size: 2.25rem;
+  }
+  .about-hero .lead {
+    font-size: 1.15rem;
+  }
+
+  .story-section,
+  .team-section {
+    padding: 70px 20px;
+  }
+
+  .story-section h2,
+  .team-section .section-title {
+    font-size: 2.1rem;
+    margin-bottom: 40px;
+  }
+
+  .story-section p {
+    font-size: 1.1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+  }
+
+  .team-card {
+    padding: 25px 20px;
+  }
+
+  .team-card img {
+    height: 240px;
+  }
+
+  .team-card h3 {
+    font-size: 1.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 80px 15px 50px;
+  }
+  .about-hero h1 {
+    font-size: 1.95rem;
+  }
+
+  .story-section,
+  .team-section {
+    padding: 60px 15px;
+  }
+
+  .story-section h2,
+  .team-section .section-title {
+    font-size: 1.9rem;
+  }
+
+  .team-grid {
+    gap: 25px;
+  }
+
+  .team-card {
+    padding: 22px 18px;
+  }
+
+  .team-card img {
+    height: 220px;
+  }
+}

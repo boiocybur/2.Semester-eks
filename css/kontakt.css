@@ -245,13 +245,27 @@ select:focus {
 }
 
 /* ==================== RESPONSIV ==================== */
+@media (max-width: 1200px) {
+  .contact-container {
+    gap: 60px;
+  }
+}
 
 @media (max-width: 1024px) {
   .contact-container {
     grid-template-columns: 1.2fr 4px 0.8fr;
     gap: 60px;
   }
+
+  .hero-content {
+    padding: 90px 30px 50px;
+  }
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
   .contact-form {
+    padding: 40px 30px;
     max-width: 100%;
     margin-left: 0;
   }
@@ -260,7 +274,7 @@ select:focus {
 @media (max-width: 768px) {
   .contact-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 50px;
     padding: 40px 20px;
   }
 
@@ -268,8 +282,36 @@ select:focus {
     display: none;
   }
 
+  .contact-left {
+    padding-right: 0;
+  }
+
   .contact-right {
     justify-content: center;
+  }
+
+  .hero-content {
+    padding: 80px 20px 45px;
+  }
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .contact-form {
+    padding: 35px 25px;
+  }
+
+  .b2b-section,
+  .support-section {
+    padding: 30px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .input-wrapper input,
@@ -278,9 +320,26 @@ select:focus {
   .submit-btn {
     max-width: 100%;
   }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 30px 15px;
+  }
+
+  .hero-content {
+    padding: 70px 15px 35px;
+  }
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+  }
 
   .b2b-section,
   .support-section {
-    padding: 30px;
+    padding: 25px;
   }
 }

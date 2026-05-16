@@ -360,22 +360,135 @@
 .btn-choose-big:hover {
   transform: translateY(-3px);
 }
-@media (max-width: 1024px) {
-  .choice-container {
-    grid-template-columns: 1fr;
-    margin: 0 auto 80px;
+@media (max-width: 1200px) {
+  .pricing-container {
+    grid-template-columns: repeat(3, 1fr);
   }
-  .choice-card {
-    margin: 0 auto;
-    max-width: 500px;
+  .deltid .pricing-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (max-width: 768px) {
-  .choice-hero {
-    padding: 100px 20px 60px;
+
+@media (max-width: 1024px) {
+  .pricing-hero {
+    padding: 90px 30px 50px;
   }
-  .choice-card {
-    margin: 0 auto;
-    max-width: 400px;
+  .pricing-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .pricing-box {
+    padding: 20px 20px 60px;
+  }
+
+  .pricing-container {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-hero {
+    padding: 80px 20px 40px;
+  }
+  .pricing-hero h1 {
+    font-size: 2.1rem;
+  }
+  .pricing-hero p {
+    font-size: 1.1rem;
+  }
+
+  .pricing-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ) !important; /* 2 kolonner på tablet/mobil */
+    gap: 20px;
+  }
+
+  .deltid .pricing-container {
+    grid-template-columns: 1fr !important; /* Deltid får 1 kolonne på mobil */
+  }
+
+  .pricing-card {
+    height: auto;
+  }
+
+  .card-header {
+    padding: 24px 20px 16px;
+  }
+  .card-header h3 {
+    font-size: 1.65rem;
+  }
+
+  .features {
+    padding: 20px;
+  }
+
+  .price {
+    padding: 20px 20px 28px;
+  }
+  .price-amount {
+    font-size: 2.4rem;
+  }
+
+  .btn-choose {
+    width: 90%;
+    padding: 14px;
+    font-size: 1.05rem;
+  }
+
+  /* Choice section */
+  .choice-hero {
+    padding: 80px 20px 50px;
+  }
+  .choice-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .choice-container {
+    grid-template-columns: 1fr;
+    margin: 0 auto 60px;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-hero {
+    padding: 70px 15px 35px;
+  }
+  .pricing-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .pricing-box {
+    padding: 15px 15px 50px;
+    border-radius: 12px;
+  }
+
+  .pricing-container {
+    gap: 18px;
+  }
+
+  .card-header {
+    padding: 22px 18px 16px;
+  }
+  .features {
+    padding: 18px;
+  }
+  .features li {
+    padding: 10px 0;
+    font-size: 0.97rem;
+  }
+
+  .btn-choose {
+    width: 92%;
+    padding: 13px;
+  }
+
+  .choice-hero {
+    padding: 70px 15px 40px;
+  }
+  .choice-hero h1 {
+    font-size: 1.85rem;
   }
 }
